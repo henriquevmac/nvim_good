@@ -8,6 +8,6 @@ o.tabstop = 4
 o.softtabstop = 4
 o.expandtab = true
 
-o.scrolloff = 8
+o.scrolloff = 10
 
 o.showmode = false
