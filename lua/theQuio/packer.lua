@@ -66,4 +66,6 @@ return require('packer').startup(function(use)
     }
     use 'mfussenegger/nvim-jdtls'
     use 'rust-lang/rust.vim'
+    use "nvim-treesitter/nvim-treesitter-context"
+
 end)
