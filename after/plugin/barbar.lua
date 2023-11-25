@@ -31,7 +31,21 @@ require'barbar'.setup {
     icons = {
         buffer_index = true,
 
-        filetype = { enabled = false},
+        diagnostics = {
+            [vim.diagnostic.severity.ERROR] = {enabled = true, ''},
+            [vim.diagnostic.severity.WARN] = {enabled = true, ''},
+            [vim.diagnostic.severity.INFO] = {enabled = true, ''},
+            [vim.diagnostic.severity.HINT] = {enabled = true, ''},
+        },
+        gitsigns = {
+            added = {enabled = true, icon = '+'},
+            changed = {enabled = true, icon = '~'},
+            deleted = {enabled = true, icon = '-'},
+        },
+        filetype = {
+            custom_colors = false,
+            enabled = true
+        },
 
         button = ' '
     }

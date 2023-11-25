@@ -37,7 +37,7 @@ lsp.set_preferences({
     }
 })
 
-lsp.on_attach(function(client, bufnr)
+lsp.on_attach(function(_, bufnr)
     local opts = {buffer = bufnr, remap = false}
 
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
@@ -51,6 +51,53 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
+
+require('mason').setup()
+
+require('mason-lspconfig').setup({
+    handlers = {
+        require('lspconfig').jdtls.setup({
+            cmd = { "jdtls" },
+            on_attach = lsp.on_attach,
+            capabilities = lsp.capabilities,
+            filetypes = { "java" },
+            root_dir = require('lspconfig.util').root_pattern("pom.xml", "gradle.build", ".git"),
+            settings = {
+                java = {
+                    signatureHelp = { enabled = true },
+                    contentProvider = { preferred = "fernflower" },
+                    completion = {
+                        favoriteStaticMembers = {
+                            "org.hamcrest.MatcherAssert.assertThat",
+                            "org.hamcrest.Matchers.*",
+                            "org.hamcrest.CoreMatchers.*",
+                            "org.junit.jupiter.api.Assertions.*",
+                            "java.util.Objects.requireNonNull",
+                            "java.util.Objects.requireNonNullElse",
+                            "org.mockito.Mockito.*"
+                        }
+                    },
+                    sources = {
+                        organizeImports = {
+                            starThreshold = 9999,
+                            staticStarThreshold = 9999
+                        }
+                    },
+                    codeGeneration = {
+                        toString = {
+                            template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}"
+                        }
+                    },
+                }
+            },
+            init_options = {
+                bundles = {
+                    vim.fn.glob("~/Documents/LEIC/PO/framework/po-uilib.jar"),
+                }
+            }
+        })
+    }
+})
 
 lsp.setup()
 

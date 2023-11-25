@@ -24,10 +24,16 @@ return require('packer').startup(function(use)
         end,
     }
 
-    use 'nvim-tree/nvim-web-devicons'
-    use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'}
+    -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
+    use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
+    use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
+    use 'romgrk/barbar.nvim'
     use 'mbbill/undotree'
     use 'tpope/vim-fugitive'
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
 
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -59,4 +65,5 @@ return require('packer').startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
     use 'mfussenegger/nvim-jdtls'
+    use 'rust-lang/rust.vim'
 end)
