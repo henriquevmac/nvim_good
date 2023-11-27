@@ -12,7 +12,5 @@ vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set("n", "<leader><C-k>", vim.cmd.ZenMode)
-
 vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
 
