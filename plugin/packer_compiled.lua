@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/home/quiomachado/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["barbar.nvim"] = {
-    loaded = true,
-    path = "/home/quiomachado/.local/share/nvim/site/pack/packer/start/barbar.nvim",
-    url = "https://github.com/romgrk/barbar.nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/quiomachado/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -123,6 +118,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/quiomachado/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  harpoon = {
+    loaded = true,
+    path = "/home/quiomachado/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/theprimeagen/harpoon"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -214,6 +214,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/quiomachado/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  vimtex = {
+    loaded = true,
+    path = "/home/quiomachado/.local/share/nvim/site/pack/packer/start/vimtex",
+    url = "https://github.com/lervag/vimtex"
   },
   ["zen-mode.nvim"] = {
     loaded = true,

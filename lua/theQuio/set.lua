@@ -14,3 +14,6 @@ o.scrolloff = 10
 o.showmode = false
 
 o.termguicolors = true
+
+o.hlsearch = false
+o.incsearch = true
