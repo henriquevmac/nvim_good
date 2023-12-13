@@ -1,16 +1,30 @@
 Colors = {
-	onedark = "onedark",
-	onedark_vivid = "onedark_vivid",
-	onedark_dark = "onedark_dark",
+    onedark = "onedark",
+    onedark_vivid = "onedark_vivid",
+    onedark_dark = "onedark_dark",
+    catppuccin_latte = "catppuccin-latte",
+    catppuccin_frappe = "catppuccin-frappe",
+    catppuccin_macchiato = "catppuccin-macchiato",
+    catppuccin_mocha = "catppuccin-mocha",
+    tokyonight = "tokyonight",
+    tokyonight_night = "tokyonight-night",
+    tokyonight_storm = "tokyonight-storm",
+    tokyonight_day = "tokyonight-day",
+    tokyonight_moon = "tokyonight-moon",
+    gruvbox = "gruvbox",
 }
 
 require('onedarkpro').setup({
     disable_background = true
 })
 
+require('tokyonight').setup({
+    transparent = true,
+})
+
 function ColorMyPencils(color)
-	color = color or "onedark"
-	vim.cmd.colorscheme(color)
+    color = color or "gruvbox"
+    vim.cmd.colorscheme(color)
 
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
