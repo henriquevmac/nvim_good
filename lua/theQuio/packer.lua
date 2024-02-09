@@ -83,4 +83,16 @@ return require('packer').startup(function(use)
             require('Comment').setup()
         end
     }
+    use({
+        'rose-pine/neovim',
+        as = 'rose-pine',
+    })
+    use({
+        "stevearc/oil.nvim",
+        config = function()
+            require("oil").setup()
+        end,
+    })
+    use "folke/trouble.nvim"
+
 end)
