@@ -1,4 +1,3 @@
-
 vim.keymap.set("n", "<leader><C-k>", function()
     require("zen-mode").setup {
         window = {
