@@ -87,12 +87,10 @@ return require('packer').startup(function(use)
         'rose-pine/neovim',
         as = 'rose-pine',
     })
-    use({
-        "stevearc/oil.nvim",
-        config = function()
-            require("oil").setup()
-        end,
-    })
+    use "stevearc/oil.nvim"
+
     use "folke/trouble.nvim"
+
+    use "christoomey/vim-tmux-navigator"
 
 end)
