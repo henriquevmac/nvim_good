@@ -94,4 +94,6 @@ return require('packer').startup(function(use)
     use "christoomey/vim-tmux-navigator"
 
     use "jose-elias-alvarez/null-ls.nvim"
+
+    use "S1M0N38/love2d.nvim"
 end)

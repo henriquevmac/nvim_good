@@ -140,6 +140,11 @@ _G.packer_plugins = {
     path = "/home/quiomachado/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
+  ["love2d.nvim"] = {
+    loaded = true,
+    path = "/home/quiomachado/.local/share/nvim/site/pack/packer/start/love2d.nvim",
+    url = "https://github.com/S1M0N38/love2d.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/quiomachado/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
