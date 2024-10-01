@@ -1,5 +1,6 @@
 local lsp = require("lsp-zero")
 
+
 lsp.preset("recommended")
 
 lsp.ensure_installed({
@@ -9,6 +10,9 @@ lsp.ensure_installed({
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
 
+local servers = {
+  ruby_lsp = {},
+}
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -52,6 +56,17 @@ lsp.on_attach(function(_, bufnr)
 end)
 
 require('mason').setup()
+
+require('mason-lspconfig').setup_handlers {
+  function(server_name)
+    require("lspconfig")[server_name].setup {
+      capabilities = lsp.capabilities,
+      on_attach = lsp.on_attach,
+      settings = servers[server_name],
+      filetypes = (servers[server_name] or {}).filetypes,
+    }
+  end
+}
 
 require('mason-lspconfig').setup({
     handlers = {

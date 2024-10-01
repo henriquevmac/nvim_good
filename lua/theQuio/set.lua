@@ -19,6 +19,8 @@ vim.api.nvim_create_autocmd({'BufEnter', 'BufWinEnter'}, {
 		end
 })
 
+o.mouse = ""
+
 o.number = true
 o.relativenumber = true
 
