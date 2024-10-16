@@ -1,6 +1,5 @@
 local lsp = require("lsp-zero")
 
-
 lsp.preset("recommended")
 
 lsp.ensure_installed({
@@ -27,7 +26,7 @@ lsp.setup_nvim_cmp({
 })
 
 lsp.set_preferences({
-    suggest_lsp_servers = false,
+    suggest_lsp_servers = true,
     sign_icons = {
         error = 'E',
         warn = 'W',
@@ -50,6 +49,7 @@ lsp.on_attach(function(_, bufnr)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
+
 
 require('mason').setup()
 
@@ -94,6 +94,9 @@ require('mason-lspconfig').setup({
                     vim.fn.glob("~/Documents/LEIC/PO/framework/po-uilib.jar"),
                 }
             }
+        }),
+        require('lspconfig').clangd.setup({
+            offset_encoding = 'utf-8',
         })
     }
 })

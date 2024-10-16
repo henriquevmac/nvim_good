@@ -20,3 +20,6 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 vim.keymap.set("n", "<leader>pv", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+vim.keymap.set("n", "]q", "<CMD>cnext<CR>", { desc = "Next quickfix" })
+vim.keymap.set("n", "[q", "<CMD>cprev<CR>", { desc = "Previous quickfix" })
