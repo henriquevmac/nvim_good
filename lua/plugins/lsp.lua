@@ -77,14 +77,14 @@ return {
             handlers = {
                 require('lspconfig').clangd.setup({
                     offset_encoding = 'utf-8',
-                })
+                }),
             }
         })
-
         lsp.setup()
 
         vim.diagnostic.config({
             virtual_text = true
         })
+        require('luasnip.loaders.from_vscode').lazy_load()
     end
 }
