@@ -111,6 +111,14 @@ return {
                         },
                     })
                 end,
+
+                clangd = function()
+                    require('lspconfig').clangd.setup({
+                        capabilities = {
+                            offsetEncoding = 'utf-8',
+                        }
+                    })
+                end,
             },
         })
 
