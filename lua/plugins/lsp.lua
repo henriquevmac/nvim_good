@@ -22,6 +22,16 @@ return {
         -- This will avoid an annoying layout shift in the screen
         vim.opt.signcolumn = 'yes'
 
+        -- Add borders to floating windows
+        vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+            vim.lsp.handlers.hover,
+            { border = 'rounded' }
+        )
+        vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+            vim.lsp.handlers.signature_help,
+            { border = 'rounded' }
+        )
+
         -- Configure error/warnings interface
         vim.diagnostic.config({
             virtual_text = false,
