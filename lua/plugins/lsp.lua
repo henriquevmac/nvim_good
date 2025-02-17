@@ -106,6 +106,8 @@ return {
                                 },
                                 workspace = {
                                     library = { vim.env.VIMRUNTIME },
+                                    userThirdParty = { os.getenv("HOME") .. ".local/share/LuaAddons" },
+                                    checkThirdParty = "Apply"
                                 },
                             },
                         },
