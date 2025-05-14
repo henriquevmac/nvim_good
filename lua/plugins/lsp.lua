@@ -119,13 +119,6 @@ return {
                         capabilities = {
                             offsetEncoding = 'utf-8',
                         },
-                        cmd = {
-                            "clangd",
-                            "--extra-arg=-I/home/henriquevmac/compiladores/root/usr/include",
-                            -- added extra-arg to include the root headers for compiladores
-                            -- "--extra-arg=-I/home/henriquevmac/compiladores/root/usr/include/cdk",
-                            -- "--extra-arg=-I/home/henriquevmac/compiladores/root/usr/include/rts",
-                        }
                     })
                 end,
             },
