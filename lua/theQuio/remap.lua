@@ -10,6 +10,7 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.keymap.set("n", "<leader>P", ":r !wl-paste<CR>")
 
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
@@ -23,3 +24,16 @@ vim.keymap.set("n", "<leader>pv", "<CMD>Oil<CR>", { desc = "Open parent director
 
 vim.keymap.set("n", "]q", "<CMD>cnext<CR>", { desc = "Next quickfix" })
 vim.keymap.set("n", "[q", "<CMD>cprev<CR>", { desc = "Previous quickfix" })
+
+vim.keymap.set("v", "<leader><C-s>", function ()
+    local sPos = vim.fn.getpos("'<")
+    local ePos = vim.fn.getpos("'>")
+
+    local sLine = sPos[2]
+    local eLine = ePos[2]
+    local lines = vim.fn.getline(sLine, eLine)
+
+    local selectedText = table.concat(lines, "\n")
+
+    vim.fn.system('echo "' .. selectedText .. '" | xargs -I{} xdg-open "{}"')
+end, { noremap = true, silent = true })
