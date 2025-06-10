@@ -24,7 +24,7 @@ return {
         vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
         vim.keymap.set('n', '<leader>pm', builtin.man_pages, {})
         vim.keymap.set('n', '<leader>vs', builtin.lsp_document_symbols, {})
-        vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
+        vim.keymap.set('n', '<leader>gc', builtin.git_branches, {})
         vim.keymap.set('n', '<leader>ec', builtin.colorscheme, {})
     end
 }
