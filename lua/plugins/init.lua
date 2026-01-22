@@ -17,6 +17,7 @@ return {
         config = function()
             require("freeze-code").setup({
                 copy = true,
+                dir = "~/Pictures/",
                 freeze_config = {
                     theme = "gruvbox",
                 }
